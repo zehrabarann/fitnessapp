@@ -1,11 +1,11 @@
-import { Button, Card, Carousel } from 'antd';
+import { Button,  Carousel } from 'antd';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import gym from "../../assets/gym.png"
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 
-const Cards = () => {
+const TopMenu = () => {
 
   const [bodyPartList, setBodyPartList] = useState([])
   const [active, setActive] = useState('all')
@@ -88,4 +88,4 @@ const Cards = () => {
   )
 }
 
-export default Cards
+export default TopMenu

@@ -1,10 +1,8 @@
-import { Pagination } from "antd"
 import SearchComponent from '../search'
-import Cards from "../cards"
+import TopMenu from "../topMenu"
 import Exercises from "../exercises"
 import Header from "../header"
 import Slider from "../slider"
-import CustomPagination from "../pagination"
 
 const Home = () => {
     return (
@@ -12,7 +10,7 @@ const Home = () => {
             <Header />
             <Slider />
             <SearchComponent />
-            <Cards />
+            <TopMenu />
             <Exercises />
         </>
     )
