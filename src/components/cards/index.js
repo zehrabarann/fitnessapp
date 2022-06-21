@@ -1,21 +1,15 @@
-//import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 import { Button, Card, Carousel } from 'antd';
 import React from 'react';
-import { ShoppingOutlined } from '@ant-design/icons';
 import { useEffect, useState } from 'react';
-import { baseUrl } from '../../constant';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import gym from "../../assets/gym.png"
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
-const { Meta } = Card;
 
 const Cards = () => {
 
   const [bodyPartList, setBodyPartList] = useState([])
   const [active, setActive] = useState('all')
 
-console.log("env", process.env)
   useEffect(() => {
     if (bodyPartList.length === 0) {
       const options = {
@@ -42,7 +36,7 @@ console.log("env", process.env)
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: window.innerWidth > 600 ? 4.5 : 2,
+    slidesToShow: 6,
     nextArrow: window.innerWidth > 600 ? <SampleNextArrow /> : <></>,
     prevArrow: window.innerWidth > 600 ? <SamplePrevArrow /> : <></>,
   }
@@ -75,10 +69,7 @@ console.log("env", process.env)
       <div>
 
 
-        <Carousel {...settings} arrows={true} draggable={true}>
-
-
-          <div className='p-10 plist-cart'>
+        <Carousel {...settings} arrows={true} draggable={true} className='m-auto my-10 w-11/12'>
             {
               bodyPartList.map((element, index) => {
                 return (
@@ -87,16 +78,10 @@ console.log("env", process.env)
                       <img src={gym} alt="logo" className='h-[50px] w-auto' />
                       <p>{element}</p>
                     </Button>
-
-
                   </div>
-
                 )
               })
             }
-
-
-          </div>
         </Carousel>
       </div>
     </>
