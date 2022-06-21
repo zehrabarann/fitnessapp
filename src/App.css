@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.blob{
+  overflow: hidden;
+  width: 36rem;
+  height: 36rem;
+  border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+  background: #8f44fd;
+  background-size: cover;
+  background-position: center;
+  /* background-image: url("fitness.jpg"); */
+
+  animation: morph 3.75s linear infinite;
+
+}
+
+@keyframes morph {
+  0%, 100% {
+    border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+  }
+  33%{
+    border-radius: 72% 28% 48% 48% / 28% 28% 72% 72%;
+  }
+
+  66% {
+    border-radius: 100% 56% 56% 100% / 100% 100% 56% 56%;
+  }
+}
+
+
+.plist-cart {
+  display: flex !important;
+
+}
+
+.ant-pagination-options {
+  display: none;
+}
