@@ -1,14 +1,13 @@
-import { Button,  Carousel } from 'antd';
+import { Button, Carousel } from 'antd';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import gym from "../../assets/gym.png"
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 
-const TopMenu = () => {
+const TopMenu = (props) => {
 
   const [bodyPartList, setBodyPartList] = useState([])
-  const [active, setActive] = useState('all')
 
   useEffect(() => {
     if (bodyPartList.length === 0) {
@@ -36,7 +35,7 @@ const TopMenu = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 5,
     nextArrow: window.innerWidth > 600 ? <SampleNextArrow /> : <></>,
     prevArrow: window.innerWidth > 600 ? <SamplePrevArrow /> : <></>,
   }
@@ -67,21 +66,19 @@ const TopMenu = () => {
   return (
     <>
       <div>
-
-
-        <Carousel {...settings} arrows={true} draggable={true} className='m-auto my-10 w-11/12'>
-            {
-              bodyPartList.map((element, index) => {
-                return (
-                  <div key={index} onClick={() => setActive(element)} className={active === element ? 'border-sky-500 box-border' : ''}>
-                    <Button className='w-[250px] h-[270px] flex flex-col justify-center items-center'>
-                      <img src={gym} alt="logo" className='h-[50px] w-auto' />
-                      <p>{element}</p>
-                    </Button>
-                  </div>
-                )
-              })
-            }
+        <Carousel {...settings} arrows={true} draggable={true} className='w-11/12 m-auto my-14'>
+          {
+            bodyPartList.map((element, index) => {
+              return (
+                <div key={index} onClick={() => props.handleBodyPartFilter(element)} className={props.active === element ? 'border-sky-500 box-border' : ''}>
+                  <Button className='w-[250px] h-[270px] flex flex-col justify-center items-center'>
+                    <img src={gym} alt="logo" className='h-[50px] w-auto' />
+                    <p className='py-5 text-2xl font-medium capitalize'>{element}</p>
+                  </Button>
+                </div>
+              )
+            })
+          }
         </Carousel>
       </div>
     </>

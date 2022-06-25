@@ -8,8 +8,8 @@ const CustomPagination = (props) => {
 
     return (
         <>
-            <div className='flex justify-center'>
-                <Pagination
+            <div className='flex justify-center py-5'>
+                <Pagination className='border-none'
                     onChange={props.handlePaginationChange}
                     defaultCurrent={1}
                     total={pageCount}
