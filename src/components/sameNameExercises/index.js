@@ -53,8 +53,9 @@ const SameNameExcercises = (props) => {
     }
     return (
         <>
-            <div>
-                <Carousel {...settings} arrows={true} draggable={true} className='w-11/12 m-auto my-5'>
+            <div className="h-[480px] w-11/12 m-auto ">
+                <h3 className="text-2xl font-semibold">Watch <span>{props.title} </span>exercise videos</h3>
+                <Carousel {...settings} arrows={true} draggable={true} className='my-5'>
                     {
                         sameNameExercises.map((element) => {
                             return (
@@ -68,17 +69,21 @@ const SameNameExcercises = (props) => {
                                         bordered={false}
                                         onClick={() => showModal(element)}
                                     >
-                                        <Title level={4}>{element.title}</Title>
+                                        <Title level={4} className='sameNameTitle h-[57px]'>{element.title}</Title>
                                         <div>
                                             <span className="flex items-center">
                                                 <ClockCircleOutlined /> <span className="pl-2 pr-2">:</span> {element.uploadedAt}
                                             </span>
+                                            <div className="flex flex-row mt-1">
                                             <span className="flex items-center">
                                                 <LikeOutlined /> <span className="pl-2 pr-2">:</span> {element.ratings.likes}
                                             </span>
-                                            <span className="flex items-center">
+                                            <span className="flex items-center ml-5">
                                                 <DislikeOutlined /> <span className="pl-2 pr-2">:</span> {element.ratings.dislikes}
                                             </span>
+
+                                            </div>
+                                            
                                         </div>
                                     </Card>
                                 </div>

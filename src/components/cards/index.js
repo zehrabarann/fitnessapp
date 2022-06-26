@@ -1,11 +1,11 @@
 import { Card } from "antd"
 
-const Cards = ({ gifUrl, bodyPart, target, name }) => {
+const Cards = ({ gifUrl, bodyPart, target, name, equipment }) => {
     return (
         <>
             <Card
                 hoverable bordered className='w-auto h-[500px] shadow-indigo-500/40 '
-                cover={<img alt="example" className='h-[325px] object-contain ' src={gifUrl} />}
+                cover={<img alt="example" className='h-[325px] object-contain cursor-pointer' src={gifUrl} />}
             >
                 <div className=' py-0'>
                     <span className='p-[8px] bg-indigo-800 mr-[15px] text-white rounded-full'>{bodyPart}</span>
@@ -13,6 +13,9 @@ const Cards = ({ gifUrl, bodyPart, target, name }) => {
                 </div>
                 <div className='mt-8'>
                     <span className='text-3xl font-bold mt-5'>{name}</span>
+                </div>
+                <div className='mt-8'>
+                    <span className='text-3xl font-bold mt-5'>{equipment}</span>
                 </div>
             </Card>
         </>

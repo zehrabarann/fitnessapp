@@ -26,7 +26,7 @@ export const settings = {
         className={className}
         style={{ ...style, display: "block" }}
         onClick={onClick}
-      ><ArrowLeftOutlined style={{ fontSize: '16px', color: '#08c' }} /></div>
+      ><ArrowLeftOutlined style={{ fontSize: '16px', color: '#1e1d1d' }} /></div>
     )
   }
 
@@ -37,6 +37,6 @@ export const settings = {
         className={className + " text-black"}
         style={{ ...style, display: "block" }}
         onClick={onClick}
-      ><ArrowRightOutlined style={{ fontSize: '16px', color: '#08c' }} /></div>
+      ><ArrowRightOutlined style={{ fontSize: '16px', color: '#1e1d1d' }} /></div>
     )
   }

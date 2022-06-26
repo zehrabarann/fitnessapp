@@ -10,6 +10,7 @@ import target from "../../assets/target.png"
 import equipment from "../../assets/equipment.png"
 import SameNameExcercises from "../sameNameExercises";
 import SimilarTargetExercises from "../similarTargetExercises";
+import SimilarEquipmentExercises from "../SimilarEquipmentExercises";
 
 const Detail = () => {
 
@@ -59,7 +60,7 @@ const Detail = () => {
               <div>
                 <span className="text-5xl font-bold">{exercises.name}</span>
               </div>
-              <div>
+              <div className="text-2xl my-5">
                 <p>Exercises keep you strong.  <span>{exercises.name}</span>bup is one
                   of the best <br /> exercises to target your {exercises.target}. It will help you improve your{' '}
                   <br /> mood and gain energy.</p>
@@ -96,6 +97,8 @@ const Detail = () => {
         <SameNameExcercises name={exercises.name} />
 
         <SimilarTargetExercises target={exercises.target}/>
+
+        <SimilarEquipmentExercises equipment={exercises.equipment}/>
       </div>
 
 
