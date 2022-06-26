@@ -54,7 +54,7 @@ const SameNameExcercises = (props) => {
     return (
         <>
             <div className="h-[480px] w-11/12 m-auto ">
-                <h3 className="text-2xl font-semibold">Watch <span>{props.title} </span>exercise videos</h3>
+                <h3 className="text-3xl font-semibold">Watch <span>{props.name} </span>exercise videos</h3>
                 <Carousel {...settings} arrows={true} draggable={true} className='my-5'>
                     {
                         sameNameExercises.map((element) => {
@@ -69,7 +69,7 @@ const SameNameExcercises = (props) => {
                                         bordered={false}
                                         onClick={() => showModal(element)}
                                     >
-                                        <Title level={4} className='sameNameTitle h-[57px]'>{element.title}</Title>
+                                        <Title level={4} className='sameNameTitle h-[57px] '>{element.title}</Title>
                                         <div>
                                             <span className="flex items-center">
                                                 <ClockCircleOutlined /> <span className="pl-2 pr-2">:</span> {element.uploadedAt}

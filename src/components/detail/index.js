@@ -58,7 +58,7 @@ const Detail = () => {
             </Col>
             <Col span={12}>
               <div>
-                <span className="text-5xl font-bold">{exercises.name}</span>
+                <span className="text-5xl font-bold capitalize">{exercises.name}</span>
               </div>
               <div className="text-2xl my-5">
                 <p>Exercises keep you strong.  <span>{exercises.name}</span>bup is one
@@ -71,21 +71,21 @@ const Detail = () => {
                     <img src={bodyPart} alt="logo" className="h-[45px] w-[45px]" />
                   </button>
 
-                  <span className="ml-10 text-2xl font-semibold">{exercises.bodyPart}</span>
+                  <span className="ml-10 text-2xl font-semibold capitalize">{exercises.bodyPart}</span>
                 </div>
                 <div className="flex items-center mt-5">
                   <button className="w-[100px] h-[100px] flex items-center justify-center bg-[#fff2db] rounded-full">
                     <img src={target} alt="logo" className="h-[45px] w-[45px]" />
                   </button>
 
-                  <span className="ml-10 text-2xl font-semibold">{exercises.target}</span>
+                  <span className="ml-10 text-2xl font-semibold capitalize">{exercises.target}</span>
                 </div>
                 <div className="flex items-center mt-5">
                   <button className="w-[100px] h-[100px] flex items-center justify-center bg-[#fff2db] rounded-full">
                     <img src={equipment} alt="logo" className="h-[45px] w-[45px]" />
                   </button>
 
-                  <span className="ml-10 text-2xl font-semibold">{exercises.equipment}</span>
+                  <span className="ml-10 text-2xl font-semibold capitalize">{exercises.equipment}</span>
                 </div>
 
 

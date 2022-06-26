@@ -22,7 +22,12 @@ const SimilarEquipmentExercises = ({ equipment }) => {
     }, [equipment, similarEquipmentExercises])
     return (
         <>
-            <Carousel {...settings} arrows={true} draggable={true} className='w-11/12 m-auto my-5'>
+        <div className="w-11/12 m-auto ">
+
+        <h3 className="text-2xl font-semibold">Similar Equipment Exercises</h3>
+
+        
+            <Carousel {...settings} arrows={true} draggable={true} className='my-5'>
                 {
                     similarEquipmentExercises.map((element) => {
                         return (
@@ -42,6 +47,7 @@ const SimilarEquipmentExercises = ({ equipment }) => {
                 }
 
             </Carousel>
+            </div>
         </>
     )
 }
