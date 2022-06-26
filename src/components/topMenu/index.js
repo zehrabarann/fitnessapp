@@ -3,7 +3,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import gym from "../../assets/gym.png"
-import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import { settings } from '../../constant';
 
 const TopMenu = (props) => {
 
@@ -31,36 +31,7 @@ const TopMenu = (props) => {
 
   }, [bodyPartList])
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5,
-    nextArrow: window.innerWidth > 600 ? <SampleNextArrow /> : <></>,
-    prevArrow: window.innerWidth > 600 ? <SamplePrevArrow /> : <></>,
-  }
-
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block" }}
-        onClick={onClick}
-      ><ArrowLeftOutlined style={{ fontSize: '16px', color: '#08c' }} /></div>
-    )
-  }
-
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props
-    return (
-      <div
-        className={className + " text-black"}
-        style={{ ...style, display: "block" }}
-        onClick={onClick}
-      ><ArrowRightOutlined style={{ fontSize: '16px', color: '#08c' }} /></div>
-    )
-  }
+  
 
 
   return (

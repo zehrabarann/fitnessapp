@@ -5,7 +5,11 @@ import { useEffect, useState } from "react"
 import Header from "../header";
 import { options } from '../../constant'
 import { useParams } from "react-router-dom";
-import deneme from "../../assets/bodyPart.png"
+import bodyPart from "../../assets/bodyPart.png"
+import target from "../../assets/target.png"
+import equipment from "../../assets/equipment.png"
+import SameNameExcercises from "../sameNameExercises";
+import SimilarTargetExercises from "../similarTargetExercises";
 
 const Detail = () => {
 
@@ -13,7 +17,8 @@ const Detail = () => {
 
   let { id } = useParams();
 
-  console.log('id', id)
+
+
 
   const getExercisesById = () => {
     options.url = `https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`
@@ -34,12 +39,17 @@ const Detail = () => {
     }
   })
 
+  if(Object.keys(exercises).length === 0) {
+    return(
+      <span>Loading</span>
+    )
+  }
   return (
     <>
-      <div>
+      <div className="bg-[#f8f6f0]">
         <Header />
         <Row>
-          <div className="flex w-full">
+          <div className="flex w-11/12 m-auto my-20">
 
 
             <Col span={12}>
@@ -49,24 +59,29 @@ const Detail = () => {
               <div>
                 <span className="text-5xl font-bold">{exercises.name}</span>
               </div>
+              <div>
+                <p>Exercises keep you strong.  <span>{exercises.name}</span>bup is one
+                  of the best <br /> exercises to target your {exercises.target}. It will help you improve your{' '}
+                  <br /> mood and gain energy.</p>
+              </div>
               <div className="flex flex-col my-10">
                 <div className="flex items-center mt-5">
-                  <button className="w-[70px] h-[70px] flex items-center justify-center bg-[#fff2db] rounded-full">
-                    <img src={deneme} alt="logo" className="h-[45px] w-[45px]" />
+                  <button className="w-[100px] h-[100px] flex items-center justify-center bg-[#fff2db] rounded-full">
+                    <img src={bodyPart} alt="logo" className="h-[45px] w-[45px]" />
                   </button>
 
                   <span className="ml-10 text-2xl font-semibold">{exercises.bodyPart}</span>
                 </div>
                 <div className="flex items-center mt-5">
-                  <button className="w-[70px] h-[70px] flex items-center justify-center bg-[#fff2db] rounded-full">
-                    <img src={deneme} alt="logo" className="h-[45px] w-[45px]" />
+                  <button className="w-[100px] h-[100px] flex items-center justify-center bg-[#fff2db] rounded-full">
+                    <img src={target} alt="logo" className="h-[45px] w-[45px]" />
                   </button>
 
                   <span className="ml-10 text-2xl font-semibold">{exercises.target}</span>
                 </div>
                 <div className="flex items-center mt-5">
-                  <button className="w-[70px] h-[70px] flex items-center justify-center bg-[#fff2db] rounded-full">
-                    <img src={deneme} alt="logo" className="h-[45px] w-[45px]" />
+                  <button className="w-[100px] h-[100px] flex items-center justify-center bg-[#fff2db] rounded-full">
+                    <img src={equipment} alt="logo" className="h-[45px] w-[45px]" />
                   </button>
 
                   <span className="ml-10 text-2xl font-semibold">{exercises.equipment}</span>
@@ -78,6 +93,9 @@ const Detail = () => {
           </div>
 
         </Row>
+        <SameNameExcercises name={exercises.name} />
+
+        <SimilarTargetExercises target={exercises.target}/>
       </div>
 
 

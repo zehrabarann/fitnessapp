@@ -1,55 +1,100 @@
-import { Card } from "antd";
+import { Typography, Card, Carousel } from "antd";
 import axios from "axios";
-import { useEffect, useState } from "react"
-import { options } from '../../constant';
+import { useEffect, useState, memo } from "react"
+import { settings } from "../../constant";
+import { ClockCircleOutlined, LikeOutlined, DislikeOutlined } from '@ant-design/icons'
+import Modal from "../modal";
+const { Title } = Typography;
 
-const SameNameExcercises = () => {
+const SameNameExcercises = (props) => {
 
-    const [sameNameExercises, setSameNameExercises ] = useState([])
+    const [sameNameExercises, setSameNameExercises] = useState([])
+
+    const [isModalVisible, setIsModalVisible] = useState({
+        show: false,
+        data: {}
+    });
+
+    const showModal = (data) => {
+        setIsModalVisible({ show: true, data: data });
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible({ show: false, data: {} });
+    };
 
     useEffect(() => {
-        options.url = 'https://youtube-search-and-download.p.rapidapi.com/search?query=3/4%20sit-up%20exercise'
+        if (sameNameExercises.length === 0) {
+
+            const options = {
+                method: 'GET',
+                url: 'https://simple-youtube-search.p.rapidapi.com/search',
+                params: { query: props.name, safesearch: 'false' },
+                headers: {
+                    'X-RapidAPI-Key': '353dd5be6bmshac39218188ef976p175739jsn228b74389843',
+                    'X-RapidAPI-Host': 'simple-youtube-search.p.rapidapi.com'
+                }
+            };
             axios.request(options).then(function (response) {
-                // debugger
-                setSameNameExercises(response.data)
-                console.log(response.data);
+                setSameNameExercises(response.data.results)
+                console.log('Youtube2', response.data);
             }).catch(function (error) {
                 console.error(error);
             });
-    }) 
-    return(
+
+        }
+
+    }, [sameNameExercises, props])
+
+    if (!Array.isArray(sameNameExercises)) {
+        return (
+            <span>Loading</span>
+        )
+    }
+    return (
         <>
-        <div>
-            {
-
-            sameNameExercises.map((element) => {
-                return(
-                    <div>
-                        <Card
-                                                hoverable bordered className='w-auto h-[500px] shadow-indigo-500/40 '
-                                                cover={<img alt="example" className='h-[325px] object-contain ' src={element.gifUrl} />}
-                                            >
-                                                {/* <Meta title={element.equipment}/> */}
-                                                <div className=' py-0'>
-
-                                                    <span className='p-[8px] bg-indigo-800 mr-[15px] text-white rounded-full'>{element.bodyPart}</span>
-                                                    <span className='p-[8px] bg-indigo-800 text-white rounded-full'>{element.target}</span>
-                                                </div>
-                                                <div className='mt-8'>
-                                                    <span className='text-3xl font-bold mt-5'>{element.name}</span>
-                                                </div>
-
-                                            </Card>
-
-                    </div>
-                )
-            })
-
-            }
-        </div>
+            <div>
+                <Carousel {...settings} arrows={true} draggable={true} className='w-11/12 m-auto my-5'>
+                    {
+                        sameNameExercises.map((element) => {
+                            return (
+                                <div key={element.id} className='p-2'>
+                                    <Card
+                                        title={<>
+                                            <div>
+                                                <img src={element.thumbnail.url} alt={element.title} />
+                                            </div>
+                                        </>}
+                                        bordered={false}
+                                        onClick={() => showModal(element)}
+                                    >
+                                        <Title level={4}>{element.title}</Title>
+                                        <div>
+                                            <span className="flex items-center">
+                                                <ClockCircleOutlined /> <span className="pl-2 pr-2">:</span> {element.uploadedAt}
+                                            </span>
+                                            <span className="flex items-center">
+                                                <LikeOutlined /> <span className="pl-2 pr-2">:</span> {element.ratings.likes}
+                                            </span>
+                                            <span className="flex items-center">
+                                                <DislikeOutlined /> <span className="pl-2 pr-2">:</span> {element.ratings.dislikes}
+                                            </span>
+                                        </div>
+                                    </Card>
+                                </div>
+                            )
+                        })
+                    }
+                </Carousel>
+                <Modal isModalVisible={isModalVisible.show} thumbnail={isModalVisible.data.thumbnail} title={isModalVisible.data.title} handleCancel={handleCancel}>
+                    
+                    <iframe width={isModalVisible.data.thumbnail?.width} height={isModalVisible.data.thumbnail?.height}  src={`https://www.youtube.com/embed/${isModalVisible.data.url?.split('=')[1]}`} title="3/4 Sit-Up" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </Modal>
+                
+            </div>
         </>
     )
 
 }
 
-export default SameNameExcercises
+export default memo(SameNameExcercises)
