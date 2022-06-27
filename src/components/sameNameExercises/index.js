@@ -54,7 +54,7 @@ const SameNameExcercises = (props) => {
     return (
         <>
             <div className="h-[480px] w-11/12 m-auto ">
-                <h3 className="text-3xl font-semibold">Watch <span>{props.name} </span>exercise videos</h3>
+                <h3 className="text-3xl font-semibold">Watch <span className="text-[#8B0000]">{props.name} </span>exercise videos</h3>
                 <Carousel {...settings} arrows={true} draggable={true} className='my-5'>
                     {
                         sameNameExercises.map((element) => {

@@ -85,3 +85,31 @@
   -webkit-line-clamp: 2;
 
 }
+
+.ant-carousel .slick-dots li {
+  width: 16px;
+  height: 3px;
+}
+
+.ant-carousel .slick-dots li button {
+  background-color: rgb(54, 51, 51) !important;
+  width: 16px;
+  height: 3px;
+}
+
+.ant-carousel .slick-dots li button:active {
+  background-color: #8B0000!important;
+  width: 16px;
+  height: 3px;
+}
+
+
+
+.ant-carousel .slick-dots-bottom {
+  bottom: -18px;
+}
+
+
+.ant-carousel .slick-prev {
+  left: -15px;
+}

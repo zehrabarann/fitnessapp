@@ -11,7 +11,7 @@ const onSearch = (value) => console.log(value);
 
         
         <h3 className='text-5xl font-bold text-center my-5'>Awesome Exercises You Should Know</h3>
-        <Search className='w-1/2 m-auto flex'
+        <Search className='w-2/5 m-auto flex'
       placeholder="Search Exercises"
       allowClear
       enterButton="Search"

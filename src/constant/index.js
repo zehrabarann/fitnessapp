@@ -11,10 +11,10 @@ export const options = {
 };
 
 export const settings = {
-    dots: true,
+    dots: window.innerWidth > 900 ? true : false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: window.innerWidth > 600 ? window.innerWidth < 900 ? 3 : 5 : 1.05,
     nextArrow: window.innerWidth > 600 ? <SampleNextArrow /> : <></>,
     prevArrow: window.innerWidth > 600 ? <SamplePrevArrow /> : <></>,
   }

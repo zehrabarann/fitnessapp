@@ -1,6 +1,6 @@
 import { Button, Carousel, Col, Row } from 'antd'
 // import video from "../../assets/fitness.mp4"
-import image from "../../assets/fitness.jpg"
+import image from "../../assets/sport.jpg"
 
 
 
@@ -21,7 +21,7 @@ const Slider = () => {
                     </Col>
 
                     <Col span={12}>
-                    <div className='w-[600px] float-right blob'>
+                    <div className='w-[600px] float-right '>
                     <img src={image} alt="fitness" className='rounded-bl-[70px]'/>
                     
 

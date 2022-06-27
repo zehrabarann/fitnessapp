@@ -24,8 +24,8 @@ const SimilarTargetExercises = ({ target }) => {
 
     return (
         <>
-            <div className="w-11/12 m-auto ">
-                <h3 className="text-2xl font-semibold">Similar Target Muscle Exercises</h3>
+            <div className="w-11/12 m-auto my-10 ">
+                <h3 className="text-3xl font-bold sm:text-4xl">Similar <span className="text-[#8B0000]">Target Muscle</span> Exercises</h3>
                 <Carousel {...settings} arrows={true} draggable={true} className='my-5'>
                     {
 

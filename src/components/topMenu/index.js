@@ -2,7 +2,7 @@ import { Button, Carousel } from 'antd';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import gym from "../../assets/gym.png"
+import gym from "../../assets/weights.png"
 import { settings } from '../../constant';
 
 const TopMenu = (props) => {
@@ -41,10 +41,10 @@ const TopMenu = (props) => {
           {
             bodyPartList.map((element, index) => {
               return (
-                <div key={index} onClick={() => props.handleBodyPartFilter(element)} className={props.active === element ? 'border-sky-500 box-border' : ''}>
-                  <Button className='w-[250px] h-[270px] flex flex-col justify-center items-center'>
+                <div key={index} onClick={() => props.handleBodyPartFilter(element)} className={props.active === element ? 'border-[#8B0000] box-border' : ''}>
+                  <Button className='w-[250px] h-[270px] flex flex-col justify-center items-center border-[#8B0000] hover:scale-[1.1] hover:text-[#8B0000]'>
                     <img src={gym} alt="logo" className='h-[50px] w-auto' />
-                    <p className='py-5 text-2xl font-medium capitalize'>{element}</p>
+                    <p className='py-5 text-2xl font-medium capitalize '>{element}</p>
                   </Button>
                 </div>
               )

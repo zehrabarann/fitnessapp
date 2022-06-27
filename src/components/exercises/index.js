@@ -47,16 +47,16 @@ const Exercises = (props) => {
                                             <div key={element.id}>
                                                 <Card
                                                     hoverable bordered className='w-auto h-[500px] shadow-indigo-500/40 '
-                                                    cover={<img alt="example" className='h-[325px] object-contain ' src={element.gifUrl} />}
+                                                    cover={<img alt="example" className='h-[255px] object-contain sm:h-[325px]' src={element.gifUrl} />}
                                                 >
                                                     {/* <Meta title={element.equipment}/> */}
                                                     <div className=' py-0'>
 
-                                                        <span className='p-[8px] bg-indigo-800 mr-[15px] text-white rounded-full'>{element.bodyPart}</span>
-                                                        <span className='p-[8px] bg-indigo-800 text-white rounded-full'>{element.target}</span>
+                                                        <span className='p-[8px] bg-indigo-800 mr-[15px] text-white rounded-full capitalize'>{element.bodyPart}</span>
+                                                        <span className='p-[8px] bg-indigo-800 text-white rounded-full capitalize'>{element.target}</span>
                                                     </div>
-                                                    <div className='mt-8'>
-                                                        <span className='text-3xl font-bold mt-5'>{element.name}</span>
+                                                    <div className='mt-6'>
+                                                        <span className='text-2xl font-bold mt-5'>{element.name}</span>
                                                     </div>
 
                                                 </Card>
