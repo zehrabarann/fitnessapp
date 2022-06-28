@@ -1,8 +1,11 @@
 import { Col, Menu, Row } from "antd"
+import Search from "antd/lib/input/Search";
 import { Link } from 'react-router-dom';
 import logo from "../../assets/muscle2.png"
 
 const Header = () => {
+
+    const onSearch = (value: string) => console.log(value);
 
     return (
         <>
@@ -21,6 +24,15 @@ const Header = () => {
                             Exercises
                         </Menu.Item>
                     </Menu>
+
+                    <Search
+                        placeholder="input search text"
+                        allowClear
+                        enterButton="Search"
+                        size="large"
+                        onSearch={onSearch}
+                    />
+
                 </Col>
 
             </Row>

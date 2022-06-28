@@ -14,14 +14,14 @@ const Slider = () => {
                     
                     <Col span={12} className='top-[45%]'>
                         <div className='text-6xl text-center items-center'>
-                            <h3 className='text-black'>Get Fit. Have Fun. <span className='text-blue-900'>REPEAT</span></h3>
-                            <Button className='bg-blue-100 text-black rounded-xl flex items-center p-[20px] w-auto m-auto mt-[15px]'>Explore Exercise</Button>
+                            <h3 className='text-black'>Get Fit. Have Fun. <span className='text-[#8B0000]'>REPEAT</span></h3>
+                            <Button className=' text-black rounded-xl flex items-center p-[20px] w-auto m-auto mt-[25px]'>Explore Exercise</Button>
                         </div>
 
                     </Col>
 
-                    <Col span={12}>
-                    <div className='w-[600px] float-right '>
+                    <Col span={12} className='flex justify-center'>
+                    <div className='w-[600px] float-right blob '>
                     <img src={image} alt="fitness" className='rounded-bl-[70px]'/>
                     
 

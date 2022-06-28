@@ -36,13 +36,13 @@ const TopMenu = (props) => {
 
   return (
     <>
-      <div>
-        <Carousel {...settings} arrows={true} draggable={true} className='w-11/12 m-auto my-14'>
+      <div className='py-24 w-10/12 m-auto'>
+        <Carousel {...settings} arrows={true} draggable={true} className='my-14 topmenu-slider'>
           {
             bodyPartList.map((element, index) => {
               return (
-                <div key={index} onClick={() => props.handleBodyPartFilter(element)} className={props.active === element ? 'border-[#8B0000] box-border' : ''}>
-                  <Button className='w-[250px] h-[270px] flex flex-col justify-center items-center border-[#8B0000] hover:scale-[1.1] hover:text-[#8B0000]'>
+                <div key={index} onClick={() => props.handleBodyPartFilter(element)} className={props.active === element ? 'box-border' : ''}>
+                  <Button className='w-[210px] h-[240px] flex flex-col justify-center items-center bg-[#f8f6f0] hover:scale-[1.1] border-transparent hover:text-[#8B0000] hover:border-transparent hover:bg-[#dfddd9]'>
                     <img src={gym} alt="logo" className='h-[50px] w-auto' />
                     <p className='py-5 text-2xl font-medium capitalize '>{element}</p>
                   </Button>

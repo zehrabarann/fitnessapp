@@ -113,3 +113,7 @@
 .ant-carousel .slick-prev {
   left: -15px;
 }
+
+.topmenu-slider .slick-dots-bottom {
+  display: none !important;
+}
