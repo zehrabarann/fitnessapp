@@ -117,3 +117,12 @@
 .topmenu-slider .slick-dots-bottom {
   display: none !important;
 }
+
+.ant-input-group-addon {
+  background-color: #8B0000;
+  border-color: #8B0000 !important;
+}
+
+.ant-input-affix-wrapper-focused {
+  border-color: grey !important;
+}

@@ -63,7 +63,7 @@ const SameNameExcercises = (props) => {
                                     <Card
                                         title={<>
                                             <div>
-                                                <img src={element.thumbnail.url} alt={element.title} />
+                                                <img className="h-[120px] w-full object-cover" src={element.thumbnail.url} alt={element.title} />
                                             </div>
                                         </>}
                                         bordered={false}

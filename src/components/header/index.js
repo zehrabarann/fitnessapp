@@ -5,7 +5,7 @@ import logo from "../../assets/muscle2.png"
 
 const Header = () => {
 
-    const onSearch = (value: string) => console.log(value);
+    const onSearch = (value) => console.log(value);
 
     return (
         <>
@@ -24,14 +24,6 @@ const Header = () => {
                             Exercises
                         </Menu.Item>
                     </Menu>
-
-                    <Search
-                        placeholder="input search text"
-                        allowClear
-                        enterButton="Search"
-                        size="large"
-                        onSearch={onSearch}
-                    />
 
                 </Col>
 

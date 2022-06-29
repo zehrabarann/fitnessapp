@@ -39,8 +39,8 @@ const Exercises = (props) => {
                 <div>
                     <div className='bg-[#f8f6f1] pb-10'>
                         <div className='w-11/12 m-auto'>
-                            <h3 className='text-3xl font-bold py-5'>Showing Results</h3>
-                            <div className='grid gap-5 grid-cols-4  rounded-3xl'>
+                            <h3 className='text-3xl font-bold py-8'>Showing Results</h3>
+                            <div className='grid gap-5 grid-cols-2 sm:grid gap-5 grid-cols-4 rounded-3xl'>
                                 {
                                     props.filteredData.slice(pageIndex * 12, 12 * (pageIndex + 1)).map((element) => {
                                         return (

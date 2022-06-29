@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 import 'antd/dist/antd.css';
 import './App.css';
+import './style/global.scss'
 import {
   BrowserRouter,
   Routes,
@@ -8,7 +9,6 @@ import {
 } from "react-router-dom";
 import Home from './components/home';
 import Detail from './components/detail';
-
 function App() {
   return (
    <>

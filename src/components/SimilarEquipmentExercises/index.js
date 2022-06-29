@@ -7,6 +7,7 @@ import Cards from "../cards"
 const SimilarEquipmentExercises = ({ equipment }) => {
 
     const [similarEquipmentExercises, setSimilarEquipmentExercises] = useState([]);
+    settings.dots = false
 
     useEffect(() => {
         if (similarEquipmentExercises.length === 0) {
