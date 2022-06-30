@@ -18,7 +18,7 @@ const Header = () => {
                         <Menu.Item key="mail" className="text-black hover:text-black">
                             Home
                         </Menu.Item>
-                        <Menu.Item key="mail2" className="text-black" onClick={() =>  window.scrollTo({ top: 1600, left: 100, behavior: 'smooth' })}>
+                        <Menu.Item key="mail2" className="text-black" onClick={() =>  window.scrollTo({ top: 1560, left: 100, behavior: 'smooth' })}>
                             Exercises
                         </Menu.Item>
                     </Menu>

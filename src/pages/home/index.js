@@ -26,7 +26,7 @@ const Home = () => {
                     || item.bodyPart.toLowerCase().includes(search)
             );
             setTargetList(searchedExercises)
-            window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
+            window.scrollTo({ top: 1560, left: 100, behavior: 'smooth' });
         }
         else {
             setTargetList([...prevList.current])

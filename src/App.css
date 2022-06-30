@@ -158,10 +158,13 @@
   }
 }
 
-.ant-menu-item.ant-menu-item-active {
+.ant-menu-item.ant-menu-item-active, .ant-menu-item-selected {
   color: #8B0000 !important;
 }
 
+.ant-menu-item-selected::after{
+  border-bottom: 2px solid #8B0000 !important;
+}
 .ant-menu-item.ant-menu-item-active::after {
   border-bottom: 2px solid #8B0000 !important;
 }

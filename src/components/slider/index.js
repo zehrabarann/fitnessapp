@@ -15,7 +15,7 @@ const Slider = () => {
                     <Col span={12} className='top-[45%] max-w-full pb-[30px] sm:max-w-1/2 pb-auto'>
                         <div className='text-4xl text-center items-center sm:text-6xl'>
                             <h3 className='text-black'>Get Fit. Have Fun. <span className='text-[#8B0000]'>REPEAT</span></h3>
-                            <Button className=' text-black rounded-xl flex items-center p-[20px] w-auto m-auto mt-[25px]'>Explore Exercise</Button>
+                            <Button className=' text-black rounded-xl flex items-center p-[20px] w-auto m-auto mt-[25px] hover:text-[#8B0000] hover:border-[#8B0000]' onClick={() =>  window.scrollTo({ top: 1560, left: 100, behavior: 'smooth' })}>Explore Exercise</Button>
                         </div>
 
                     </Col>
