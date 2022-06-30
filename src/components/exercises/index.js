@@ -18,13 +18,13 @@ const Exercises = (props) => {
                 <div className='bg-[#f8f6f1] pb-10'>
                     <div className='w-11/12 m-auto'>
                         <h3 className='text-3xl font-bold py-8'>Showing Results</h3>
-                        <div className='grid gap-5 grid-cols-2 rounded-3xl sm:grid-cols-4'>
+                        <div className='grid gap-5 grid-cols-2 rounded-3xl sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4'>
                             {
                                 props.filteredData.slice(pageIndex * 12, 12 * (pageIndex + 1)).map((element) => {
                                     return (
                                         <div key={element.id}>
                                             <Card
-                                                hoverable bordered className='w-auto h-[500px] shadow-indigo-500/40 '
+                                                hoverable bordered className='w-auto h-[420px] shadow-indigo-500/40 sm:h-[500px] '
                                                 cover={<img alt="example" className='h-[255px] object-contain sm:h-[325px]' src={element.gifUrl} />}
                                             >
                                                 {/* <Meta title={element.equipment}/> */}
@@ -34,7 +34,7 @@ const Exercises = (props) => {
                                                     <span className='p-[8px] bg-indigo-800 text-white rounded-full capitalize'>{element.target}</span>
                                                 </div>
                                                 <div className='mt-6'>
-                                                    <span className='text-2xl font-bold mt-5'>{element.name}</span>
+                                                    <span className='text-2xl font-bold mt-5 capitalize'>{element.name}</span>
                                                 </div>
 
                                             </Card>

@@ -7,8 +7,8 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Home from './components/home';
-import Detail from './components/detail';
+import Home from './pages/home';
+import Detail from './pages/detail';
 function App() {
   return (
    <>

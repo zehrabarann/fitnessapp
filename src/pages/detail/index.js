@@ -2,15 +2,15 @@
 import { Col, Row } from "antd";
 import axios from "axios";
 import { useEffect, useState } from "react"
-import Header from "../header";
+import Header from "../../components/header";
 import { options } from '../../constant'
 import { useParams } from "react-router-dom";
 import bodyPart from "../../assets/bodyPart.png"
 import target from "../../assets/target.png"
 import equipment from "../../assets/equipment.png"
-import SameNameExcercises from "../sameNameExercises";
-import SimilarTargetExercises from "../similarTargetExercises";
-import SimilarEquipmentExercises from "../SimilarEquipmentExercises";
+import SameNameExcercises from "../../components/sameNameExercises";
+import SimilarTargetExercises from "../../components/similarTargetExercises";
+import SimilarEquipmentExercises from "../../components/SimilarEquipmentExercises";
 
 const Detail = () => {
 

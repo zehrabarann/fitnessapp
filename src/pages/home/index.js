@@ -1,8 +1,8 @@
-import SearchComponent from '../search'
-import TopMenu from "../topMenu"
-import Exercises from "../exercises"
-import Header from "../header"
-import Slider from "../slider"
+import SearchComponent from '../../components/search'
+import TopMenu from "../../components/topMenu"
+import Exercises from "../../components/exercises"
+import Header from "../../components/header"
+import Slider from "../../components/slider"
 import { useState } from 'react'
 import { options } from '../../constant'
 import axios from 'axios'
