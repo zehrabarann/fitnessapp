@@ -37,7 +37,6 @@ const SameNameExcercises = (props) => {
             };
             axios.request(options).then(function (response) {
                 setSameNameExercises(response.data.results)
-                console.log('Youtube2', response.data);
             }).catch(function (error) {
                 console.error(error);
             });
@@ -100,7 +99,6 @@ const SameNameExcercises = (props) => {
                     }
                 </Carousel>
                 <Modal isModalVisible={isModalVisible.show} thumbnail={isModalVisible.data.thumbnail} title={isModalVisible.data.title} handleCancel={handleCancel}>
-                    
                     <iframe width={isModalVisible.data.thumbnail?.width} height={isModalVisible.data.thumbnail?.height}  src={`https://www.youtube.com/embed/${isModalVisible.data.url?.split('=')[1]}`} title="3/4 Sit-Up" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </Modal>
                 

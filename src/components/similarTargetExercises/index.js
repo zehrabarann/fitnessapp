@@ -14,7 +14,6 @@ const SimilarTargetExercises = ({ target }) => {
             options.url = 'https://exercisedb.p.rapidapi.com/exercises/target/' + target
             axios.request(options).then(function (response) {
                 setSimilarTargetExercises(response.data)
-                console.log(response.data);
             }).catch(function (error) {
                 console.error(error);
             });

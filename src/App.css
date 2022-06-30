@@ -156,6 +156,11 @@
   .ant-card-body {
     padding: 5px 10px;
   }
+
+    .ant-modal-body iframe {
+      width: 100% !important;
+    }
+  
 }
 
 .ant-menu-item.ant-menu-item-active, .ant-menu-item-selected {
@@ -167,4 +172,22 @@
 }
 .ant-menu-item.ant-menu-item-active::after {
   border-bottom: 2px solid #8B0000 !important;
+}
+button.ant-input-search-button {
+  border-color: #8B0000;
+}
+button.ant-input-search-button:hover, button.ant-input-search-button:focus {
+  border-color: #8B0000;
+  background: #8B0000 !important;
+}
+
+@media only screen and (max-width: 576px) {
+  .cardresult {
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 15px;
+   
+  }
+
+  
+  
 }

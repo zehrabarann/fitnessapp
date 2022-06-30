@@ -14,7 +14,6 @@ const SimilarEquipmentExercises = ({ equipment }) => {
             options.url = 'https://exercisedb.p.rapidapi.com/exercises/equipment/' + equipment
             axios.request(options).then(function (response) {
                 setSimilarEquipmentExercises(response.data)
-                console.log(response.data);
             }).catch(function (error) {
                 console.error(error);
             });

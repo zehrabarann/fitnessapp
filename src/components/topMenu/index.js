@@ -22,7 +22,6 @@ const TopMenu = (props) => {
 
       axios.request(options).then(function (response) {
         setBodyPartList(response.data)
-        console.log(response.data);
       }).catch(function (error) {
         console.error(error);
       });

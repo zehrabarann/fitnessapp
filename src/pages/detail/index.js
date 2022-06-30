@@ -1,5 +1,5 @@
 
-import { Col, Row } from "antd";
+import { Col, Spin, Row } from "antd";
 import axios from "axios";
 import { useEffect, useState } from "react"
 import Header from "../../components/header";
@@ -11,7 +11,7 @@ import equipment from "../../assets/equipment.png"
 import SameNameExcercises from "../../components/sameNameExercises";
 import SimilarTargetExercises from "../../components/similarTargetExercises";
 import SimilarEquipmentExercises from "../../components/SimilarEquipmentExercises";
-
+import { LoadingOutlined } from '@ant-design/icons';
 const Detail = () => {
 
   const [exercises, setExercises] = useState({})
@@ -19,13 +19,10 @@ const Detail = () => {
   let { id } = useParams();
 
 
-
-
   const getExercisesById = () => {
     options.url = `https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`
     axios.request(options).then(function (response) {
       setExercises(response.data)
-      console.log(response.data);
     }).catch(function (error) {
       console.error(error);
     });
@@ -40,9 +37,12 @@ const Detail = () => {
     }
   })
 
-  if(Object.keys(exercises).length === 0) {
-    return(
-      <span>Loading</span>
+  if (Object.keys(exercises).length === 0) {
+    const antIcon = <LoadingOutlined style={{ fontSize: 124, color: 'white' }} spin />;
+    return (
+      <div className="h-screen bg-slate-500 flex justify-center items-center">
+        <Spin indicator={antIcon} />
+      </div>
     )
   }
   return (
@@ -96,9 +96,9 @@ const Detail = () => {
         </Row>
         <SameNameExcercises name={exercises.name} />
 
-        <SimilarTargetExercises target={exercises.target}/>
+        <SimilarTargetExercises target={exercises.target} />
 
-        <SimilarEquipmentExercises equipment={exercises.equipment}/>
+        <SimilarEquipmentExercises equipment={exercises.equipment} />
       </div>
 
 
