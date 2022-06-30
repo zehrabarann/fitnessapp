@@ -45,7 +45,7 @@
   width: 36rem;
   height: 36rem;
   border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
-  background: #8f44fd;
+  background: transparent;
   background-size: cover;
   background-position: center;
   /* background-image: url("fitness.jpg"); */
@@ -125,4 +125,43 @@
 
 .ant-input-affix-wrapper-focused {
   border-color: grey !important;
+}
+
+.ant-input-affix-wrapper:hover{
+  border-color: grey !important;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+  .iframe .site-center-aligned {
+    width: 400px;
+    background-color: transparent;
+
+  }
+
+  .exercisescards {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 15px;
+    
+  }
+
+  .ant-card-body {
+    padding: 5px 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .ant-card-body {
+    padding: 5px 10px;
+  }
+}
+
+.ant-menu-item.ant-menu-item-active {
+  color: #8B0000 !important;
+}
+
+.ant-menu-item.ant-menu-item-active::after {
+  border-bottom: 2px solid #8B0000 !important;
 }

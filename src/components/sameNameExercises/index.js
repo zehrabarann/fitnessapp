@@ -2,7 +2,7 @@ import { Typography, Card, Carousel } from "antd";
 import axios from "axios";
 import { useEffect, useState, memo } from "react"
 import { settings } from "../../constant";
-import { ClockCircleOutlined, LikeOutlined, DislikeOutlined } from '@ant-design/icons'
+import { ClockCircleOutlined, LikeOutlined, DislikeOutlined, YoutubeOutlined } from '@ant-design/icons'
 import Modal from "../modal";
 const { Title } = Typography;
 
@@ -84,6 +84,14 @@ const SameNameExcercises = (props) => {
 
                                             </div>
                                             
+                                        </div>
+
+                                        <div className="mt-1">
+                                            <span className="flex items-center">
+                                            <YoutubeOutlined /> <span className="pl-2 pr-2">:</span> {element.views}
+
+
+                                            </span>
                                         </div>
                                     </Card>
                                 </div>
