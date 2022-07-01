@@ -95,9 +95,7 @@ const Detail = () => {
 
         </Row>
         <SameNameExcercises name={exercises.name} />
-
         <SimilarTargetExercises target={exercises.target} />
-
         <SimilarEquipmentExercises equipment={exercises.equipment} />
       </div>
 

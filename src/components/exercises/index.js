@@ -30,13 +30,10 @@ const Exercises = (props) => {
                                                 target={element.target}
                                             />
                                         </Link>
-
                                     )
-
                                 })
                             }
                         </div>
-
                     </div>
                 </div>
                 <CustomPagination handlePaginationChange={handlePaginationChange} pageIndex={pageIndex} total={props.filteredData.length} />

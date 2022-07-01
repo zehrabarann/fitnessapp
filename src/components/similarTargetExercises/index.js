@@ -36,15 +36,11 @@ const SimilarTargetExercises = ({ target }) => {
                                         bodyPart={element.bodyPart}
                                         target={element.target}
                                         name={element.name}
-
-
                                     />
                                 </div>
                             )
                         })
                     }
-
-
                 </Carousel>
             </div>
         </>

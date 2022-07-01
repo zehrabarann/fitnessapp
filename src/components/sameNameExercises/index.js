@@ -74,20 +74,20 @@ const SameNameExcercises = (props) => {
                                                 <ClockCircleOutlined /> <span className="pl-2 pr-2">:</span> {element.uploadedAt}
                                             </span>
                                             <div className="flex flex-row mt-1">
-                                            <span className="flex items-center">
-                                                <LikeOutlined /> <span className="pl-2 pr-2">:</span> {element.ratings.likes}
-                                            </span>
-                                            <span className="flex items-center ml-5">
-                                                <DislikeOutlined /> <span className="pl-2 pr-2">:</span> {element.ratings.dislikes}
-                                            </span>
+                                                <span className="flex items-center">
+                                                    <LikeOutlined /> <span className="pl-2 pr-2">:</span> {element.ratings.likes}
+                                                </span>
+                                                <span className="flex items-center ml-5">
+                                                    <DislikeOutlined /> <span className="pl-2 pr-2">:</span> {element.ratings.dislikes}
+                                                </span>
 
                                             </div>
-                                            
+
                                         </div>
 
                                         <div className="mt-1">
                                             <span className="flex items-center">
-                                            <YoutubeOutlined /> <span className="pl-2 pr-2">:</span> {element.views}
+                                                <YoutubeOutlined /> <span className="pl-2 pr-2">:</span> {element.views}
 
 
                                             </span>
@@ -99,9 +99,11 @@ const SameNameExcercises = (props) => {
                     }
                 </Carousel>
                 <Modal isModalVisible={isModalVisible.show} thumbnail={isModalVisible.data.thumbnail} title={isModalVisible.data.title} handleCancel={handleCancel}>
-                    <iframe width={isModalVisible.data.thumbnail?.width} height={isModalVisible.data.thumbnail?.height}  src={`https://www.youtube.com/embed/${isModalVisible.data.url?.split('=')[1]}`} title="3/4 Sit-Up" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width={isModalVisible.data.thumbnail?.width} height={isModalVisible.data.thumbnail?.height}
+                        src={`https://www.youtube.com/embed/${isModalVisible.data.url?.split('=')[1]}`} title="3/4 Sit-Up" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </Modal>
-                
+
             </div>
         </>
     )

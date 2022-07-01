@@ -14,17 +14,21 @@ const Header = () => {
                     </Link>
                 </Col>
                 <Col span={22} className='bg-[#f8f6f0] pl-5 sm:pl-auto'>
-                    <Menu mode="horizontal" defaultSelectedKeys={['mail']} className='bg-[#f8f6f0] text-black'>
-                        <Menu.Item key="mail" className="text-black hover:text-black">
-                            Home
-                        </Menu.Item>
-                        <Menu.Item key="mail2" className="text-black" onClick={() =>  window.scrollTo({ top: 1560, left: 100, behavior: 'smooth' })}>
-                            Exercises
-                        </Menu.Item>
+                    <Menu mode="horizontal" defaultSelectedKeys={['home']} className='bg-[#f8f6f0] text-black'>
+                        <Link to="/">
+                            <Menu.Item key="home" className="text-black hover:text-black">
+                                Home
+                            </Menu.Item>
+                        </Link>
+                        <Link to="/" onClick={() => window.innerWidth > 900 ?
+                            window.scrollTo({ top: 1560, left: 100, behavior: 'smooth' }) :
+                            window.scrollTo({ top: 1760, left: 100, behavior: 'smooth' })}>
+                            <Menu.Item key="exercises" className="text-black" >
+                                Exercises
+                            </Menu.Item>
+                        </Link>
                     </Menu>
-
                 </Col>
-
             </Row>
         </>
     )
